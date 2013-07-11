@@ -24,33 +24,31 @@ $this->breadcrumbs=array(
 	),
 )); */
 
-$html_empresa='<div class="bloque-contenedor">
-<a name="1336495304"></a>
+$html_contenido='<div class="bloque-contenedor">
 
 <div class="contenedor-interno">';
 
-$html_empresa.= '<b><div class="titulo-bloque">Lección Nº </b>'
+$html_contenido.= '<b><div class="titulo-bloque">Lección Nº </b>'
 .$model->id_lecciones.' </div><center> <div class="titulo-bloque2">'.$model->nb_lecciones.'</div></center>';
 
-$html_empresa.= '</div></div>';
+$html_contenido.= '</div></div>';
 
-echo $html_empresa;
+echo $html_contenido;
 
 $sql = "select * from contenidos where id_lecciones=".$model->id_lecciones;
-$contable_fiscal = Yii::app() -> db -> createCommand($sql) ->  query();
+$leccion = Yii::app() -> db -> createCommand($sql) ->  query();
 
-$html_contable_fiscal='<div class="bloque-contenedor">
-                <a name="1336495304"></a>
+$html_leccion='<div class="bloque-contenedor">
                 <div class="titulo-bloque">Contenido</div>
                 <div class="contenedor-interno">';
 $i=0;
- foreach($contable_fiscal as $fila)  
+ foreach($leccion as $fila)  
     {  		//$html_establecimiento.= '<h3><b>Sede N°'.++$i.'</b></h3>';
-if($i > 0){ $html_contable_fiscal.='<br><br>';}
-		$html_contable_fiscal.= $fila['descrip_contenidos'].'<br>';
+if($i > 0){ $html_leccion.='<br><br>';}
+		$html_leccion.= $fila['descrip_contenidos'].'<br>';
 
 $i++ ;
 }
-$html_contable_fiscal.= '</div></div>';
-echo $html_contable_fiscal;
+$html_leccion.= '</div></div>';
+echo $html_leccion;
 ?>
