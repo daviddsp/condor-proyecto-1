@@ -44,9 +44,8 @@ class Usuario extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('nombre, apellido, email, username, password, perfil', 'required'),
-			//array('cedula', 'length', 'max'=>12),
 			array('nombre, apellido', 'length', 'max'=>50),
-			array('email', 'length', 'max'=>100),
+			array('email', 'email', 'length', 'max'=>100),
 			array('username, password', 'length', 'max'=>128),
 			array('perfil', 'length', 'max'=>10),
 			array('created_at, last_login', 'safe'),
@@ -74,15 +73,14 @@ class Usuario extends CActiveRecord
 	{
 		return array(
 			'id_usuario' => 'Id Usuario',
-			//'cedula' => 'Cedula',
 			'nombre' => 'Nombre',
 			'apellido' => 'Apellido',
 			'email' => 'Email',
 			'username' => 'Username',
 			'password' => 'Password',
 			'perfil' => 'Perfil',
-			'created_at' => 'Created At',
-			'last_login' => 'Last Login',
+			'created_at' => 'Fecha Creación de la Cuenta:',
+			'last_login' => 'Último Inicio de Sessión',
 		);
 	}
 
@@ -98,7 +96,6 @@ class Usuario extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id_usuario',$this->id_usuario);
-		//$criteria->compare('cedula',$this->cedula,true);
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('apellido',$this->apellido,true);
 		$criteria->compare('email',$this->email,true);

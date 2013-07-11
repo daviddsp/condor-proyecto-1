@@ -75,6 +75,14 @@ return array(
 			'password' => 'passwd', /*postgresdba*/
 			'charset' => 'utf8',
 		),
+	/***************************              BD David              *****************************/
+		'db'=>array(
+			'connectionString' => 'pgsql:host=localhost;dbname=condor-tutorial',
+			'emulatePrepare' => true,
+			'username' => 'postgres',
+			'password' => 'postgresdba', /*postgresdba*/
+			'charset' => 'utf8',
+		),
 		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
