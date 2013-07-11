@@ -72,7 +72,7 @@ return array(
 			'connectionString' => 'pgsql:host=localhost;dbname=condor',
 			'emulatePrepare' => true,
 			'username' => 'postgres',
-			'password' => 'passwd',
+			'password' => 'passwd', /*postgresdba*/
 			'charset' => 'utf8',
 		),
 		
