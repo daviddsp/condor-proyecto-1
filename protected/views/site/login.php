@@ -41,12 +41,13 @@ $this->widget('bootstrap.widgets.TbAlert', array(
 		?>
 	<p class="note">Los campos que lleven <span class="required">*</span> son requeridos.</p>
 	<div class="contenedor-interno-login">
+		
 		<center><?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username'); ?>
+		<?php echo $form->textField($model,'username', array('data-placement'=>"right",'placement'=>"right",'rel'=>"tooltip", 'title'=>'Por favor ingrese su usuario')); ?>
 		<?php echo $form->error($model,'username'); ?>
 <!--############################################################-->
 		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password'); ?>
+		<?php echo $form->passwordField($model,'password', array('data-placement'=>"right",'placement'=>"right",'rel'=>"tooltip", 'title'=>'Por favor ingrese su contraseña')); ?>
 		<?php echo $form->error($model,'password'); ?>
 			
 	<br>

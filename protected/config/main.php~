@@ -69,20 +69,21 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'pgsql:host=localhost;dbname=condor',
-			'emulatePrepare' => true,
-			'username' => 'postgres',
-			'password' => 'passwd', /*postgresdba*/
-			'charset' => 'utf8',
-		),
-	/***************************              BD David              *****************************/
-		'db'=>array(
 			'connectionString' => 'pgsql:host=localhost;dbname=condor-tutorial',
 			'emulatePrepare' => true,
 			'username' => 'postgres',
 			'password' => 'postgresdba', /*postgresdba*/
 			'charset' => 'utf8',
 		),
+	/***************************              BD David              *****************************/
+		/*'db'=>array(
+			'connectionString' => 'pgsql:host=localhost;dbname=condor-tutorial',
+			'emulatePrepare' => true,
+			'username' => 'postgres',
+			'password' => 'postgresdba', 
+			'charset' => 'utf8',
+		),*/
+        /***************************              BD David              *****************************/
 		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
