@@ -5,13 +5,13 @@
 
 $this->pageTitle=Yii::app()->name . ' - Login';
 $this->breadcrumbs=array(
-	'Login',
+	'Inicio de Sesión',
 );
 ?>
 
-<h1>Login del Usuario</h1>
+<h1>Iniciar Sesión</h1>
 
-<p>Por favor complete el siguiente formulario con sus datos de acceso:</p>
+
 
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -22,32 +22,40 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-	<p class="note">Los campos que lleven <span class="required">*</span> son requeridos.</p>
+	
 
-	<div class="row">
+		<?php
+		
+		Yii::app()->user->setFlash('success', '<strong>Por favor</strong> complete el siguiente formulario con sus datos de acceso:');
+$this->widget('bootstrap.widgets.TbAlert', array(
+    'block'=>true, // display a larger alert block?
+    'fade'=>true, // use transitions?
+    'closeText'=>'×', // close link text - if set to false, no close link is displayed
+    'alerts'=>array( // configurations per alert type
+	    'success'=>array('block'=>true, 'fade'=>true, 'closeText'=>'×'), // success, info, warning, error or danger
+    ),
+));
+	
+		?>
+	<p class="note">Los campos que lleven <span class="required">*</span> son requeridos.</p>
+	<div class="contenedor-interno-login">
 		<?php echo $form->labelEx($model,'username'); ?>
 		<?php echo $form->textField($model,'username'); ?>
 		<?php echo $form->error($model,'username'); ?>
-	</div>
-
-	<div class="row">
+<!--############################################################-->
 		<?php echo $form->labelEx($model,'password'); ?>
 		<?php echo $form->passwordField($model,'password'); ?>
 		<?php echo $form->error($model,'password'); ?>
-		<p class="hint">
-			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
-		</p>
-	</div>
 
-	<div class="row rememberMe">
+		<br>
 		<?php echo $form->checkBox($model,'rememberMe'); ?>
 		<?php echo $form->label($model,'rememberMe'); ?>
 		<?php echo $form->error($model,'rememberMe'); ?>
+	
+	
+		<?php echo CHtml::submitButton('Ingresar'); ?>
 	</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
-	</div>
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->

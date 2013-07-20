@@ -83,6 +83,7 @@ return array(
 			'password' => 'postgresdba', /*postgresdba*/
 			'charset' => 'utf8',
 		),
+        /***************************              BD David              *****************************/
 		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors

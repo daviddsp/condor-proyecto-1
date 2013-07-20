@@ -53,14 +53,6 @@ footer
 	border-top: 1px solid #040202;
 }
 
-
-herramientas 
-{
-background-image:url(../images/HTML5-Logo.png);
-
-
-}
-
 #logo
 {
 	padding: 10px 20px;
@@ -247,4 +239,45 @@ div.search-form
 .operations li a:hover
 {
 	background: #80CFFF;
+}
+
+.titulo-bloque{
+font: oblique bold 100% cursive;
+	margin-left: 1em;
+	color: #205C90;
+	font-size: 3em;
+	letter-spacing: 0.10em;
+	font-weight: bold;
+}
+.titulo-bloque2{
+       font: oblique bold 120% cursive;
+	margin-left: 1em;
+	color: #205C90;
+	font-size: 2em;
+	letter-spacing: 0.10em;
+	font-weight: bold;
+}
+.contenedor-interno{
+	border-radius: 0.5em 0.5em 0.5em 0.5em;
+	box-shadow: 0 0 1em 0 #888888;
+	margin: 0.5em 0;
+	padding: 1em;
+}
+
+.contenedor-interno-login{
+	border-radius: 0.5em 0.5em 0.5em 0.5em;
+	box-shadow: 0 0 1em 0 #888888;
+	margin: 0.5em 0;
+	margin-left: 300px;
+	margin-right: 300px;
+	padding: 1em;
+	
+width:350px;
+height:100px;
+}
+
+.bloque-contenedor{
+	margin-left:0em;
+	font-size: 100%;
+	margin-top: 1.5em;
 }

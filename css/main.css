@@ -263,6 +263,17 @@ font: oblique bold 100% cursive;
 	margin: 0.5em 0;
 	padding: 1em;
 }
+
+.contenedor-interno-login{
+	border-radius: 0.5em 0.5em 0.5em 0.5em;
+	box-shadow: 0 0 1em 0 #888888;
+	margin: 0.5em 0;
+	margin-left: 300px;
+	margin-right: 300px;
+	padding: 1em;
+	
+}
+
 .bloque-contenedor{
 	margin-left:0em;
 	font-size: 100%;

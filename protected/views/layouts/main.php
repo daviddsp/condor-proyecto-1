@@ -44,7 +44,8 @@ $this->widget('bootstrap.widgets.TbNavbar', array(
 						array('label'=>'Inicio', 'url'=>array('/index.php')),
 						/*en esta linea es donde limitamos a que los usuarios vean los modulos que querramos*/
 						array('label'=>'G.Contenido', 'url'=>array('/Temas'), 'visible' => $admin), /*usuario administrador*/
-                  		array('label'=>'Temas', 'url'=>array('/Temas_g/index')), /*usuario general*/
+                  		array('label'=>'Temas', 'url'=>array('/Temas_g/index'), 'visible'=>!Yii::app()->user->isGuest), /*usuario general*/
+                  		array('label'=>'Temas', 'url'=>array('/Temas_l/index')), /*usuario limitado*/
 						//array('label'=>'Usuario', 'url'=>array('/usuario/admin')),
 						array('label'=>'Usuarios', 'url'=>array('/usuario/admin'), 'visible' =>$admin),
 						array('label'=>'¿Quienes Somos?', 'url'=>array('/site/page', 'view'=>'about'),),
@@ -58,9 +59,9 @@ $this->widget('bootstrap.widgets.TbNavbar', array(
 			'htmlOptions'=>array('class'=>'pull-right'),
 			'items'=>array(
 			array('label'=>'¡Resgistrate!', 'url'=>array('/usuario/create')), 
-			array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-			array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-				
+			array('label'=>'Iniciar sesión', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+			array('label'=>'Cerrar sesión ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+                           	
 			),
 		),
 	),
