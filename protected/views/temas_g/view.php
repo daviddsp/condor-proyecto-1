@@ -4,8 +4,8 @@ $this->breadcrumbs=array(
 	$model->id_temas,
 );
 
-
 ?>
+
 
 <h1><?php echo $model->nb_temas; ?></h1>
 
@@ -33,7 +33,7 @@ if($count_contenidos == 0){
 
 	$html='<table><tr><td colspan="8" style="text-align: center;">Lecciones</td></tr>';
 	foreach($contenidos as $fila){				  
-		$html.= "<tr class='principal' >
+		$html.= "<tr class='principal'>
 			<td  align='center' style=' border: 1px solid #AAAAAA;padding: 0.2em;'>".$fila['id_lecciones']."</td>
 			<td  align='center'  style='border: 1px solid #AAAAAA;padding: 0.2em;'>".$fila['descrip_contenidos']."</td>" .
 			"<td  align='center'  style='border: 1px solid #AAAAAA;padding: 0.2em;'>".$fila['id_temas']."</td>" .
