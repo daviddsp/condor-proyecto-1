@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Temases'=>array('index'),
-	'Manage',
+	'Temas'=>array('index'),
+	
 );
 
 /*$this->menu=array(
@@ -23,14 +23,23 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Temases</h1>
+<h1>Temas</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+<?php
+		
+		Yii::app()->user->setFlash('success', '<strong>¡Selecciona</strong>  el tema de tu preferencia y observa las lecciones que cada uno de ellos te ofrece!.');
+$this->widget('bootstrap.widgets.TbAlert', array(
+    'block'=>true, // display a larger alert block?
+    'fade'=>true, // use transitions?
+    'closeText'=>'×', // close link text - if set to false, no close link is displayed
+    'alerts'=>array( // configurations per alert type
+	    'success'=>array('block'=>true, 'fade'=>true), // success, info, warning, error or danger
+    ),
+));
+	
+		?>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn')); ?>
+<?php //echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -46,23 +55,20 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'id_temas',
 		'nb_temas',
 		'descrip_temas',
-		array(
-			'class'=>'bootstrap.widgets.TbButtonColumn',
-		
-		'template' => '{view} {update}', //detalle de los botones 
-'buttons'=>array(
-'view' => array(
-'label'=>'ver lecciones',
-'url'=>"CHtml::normalizeUrl(array('/Temas/view', 'id'=>\$data->id_temas))",
-'imageUrl'=>Yii::app()->request->baseUrl.'/images/update.png', //ruta de la imagen del boton que queremos agregar
-//'options' => array('class'=>'vehiculo'),
-),
-),
-
-		
 	
-		
-		
-		),
+		array(	'header'=>'Ver lección',
+			'class'=>'bootstrap.widgets.TbButtonColumn',
+			
+			'template' => '{view}', //detalle de los botones 
+			'buttons'=>array(
+				'view' => array(
+				
+					'label'=>'Ir',
+					'url'=>"CHtml::normalizeUrl(array('/Lecciones_g/admin', 'tema'=>\$data->id_temas))",
+					'imageUrl'=>Yii::app()->request->baseUrl.'../img/update.png', //ruta de la imagen del boton que queremos agregar
+					//'options' => array('class'=>'temas'),
+		  		),
+		 	),
+	    ),
 	),
 )); ?>

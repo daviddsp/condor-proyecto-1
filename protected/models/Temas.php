@@ -65,7 +65,7 @@ class Temas extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_temas' => 'Identificador del Tema',
+			'id_temas' => 'Nª',
 			'nb_temas' => 'Nombre del Tema',
 			'descrip_temas' => 'Descripción del Tema',
 		);
@@ -81,13 +81,15 @@ class Temas extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
+    		$sort=new CSort();
+                $sort->defaultOrder = 'id_temas ASC';
 		$criteria->compare('id_temas',$this->id_temas);
 		$criteria->compare('nb_temas',$this->nb_temas,true);
 		$criteria->compare('descrip_temas',$this->descrip_temas,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'sort'=>$sort,
 		));
 	}
 }

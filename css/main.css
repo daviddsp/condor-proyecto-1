@@ -273,6 +273,24 @@ font: oblique bold 100% cursive;
 	padding: 1em;
 	
 }
+.contenedor-interno-crearu{
+	border-radius: 0.5em 0.5em 0.5em 0.5em;
+	box-shadow: 0 0 1em 0 #888888;
+	margin: 0.5em 0;
+	margin-left: 30px;
+	margin-right: 600px;
+	padding: 1em;
+	
+}
+.contenedor-interno-crearu2{
+	border-radius: 0.5em 0.5em 0.5em 0.5em;
+	box-shadow: 0 0 1em 0 #888888;
+	margin: 0.5em 0;
+	margin-left: 600px;
+	margin-right: 30px;
+	padding: 1em;
+	
+}
 
 .bloque-contenedor{
 	margin-left:0em;

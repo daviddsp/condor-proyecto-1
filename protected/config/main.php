@@ -76,13 +76,13 @@ return array(
 			'charset' => 'utf8',
 		),
 	/***************************              BD David              *****************************/
-		'db'=>array(
+		/*'db'=>array(
 			'connectionString' => 'pgsql:host=localhost;dbname=condor-tutorial',
 			'emulatePrepare' => true,
 			'username' => 'postgres',
-			'password' => 'postgresdba', /*postgresdba*/
+			'password' => 'postgresdba', 
 			'charset' => 'utf8',
-		),
+		),*/
         /***************************              BD David              *****************************/
 		
 		'errorHandler'=>array(
