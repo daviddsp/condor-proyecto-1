@@ -4,7 +4,6 @@ $this->breadcrumbs=array(
 	$model->id_temas,
 );
 
-
 ?>
 
 <h1><?php echo $model->nb_temas; ?></h1>
@@ -22,14 +21,9 @@ if($count_contenidos == 0){
 	$html = 'No tiene lecciones Asociadas';
 }else{
 	
-	/* $box = $this->beginWidget('bootstrap.widgets.TbBox', array(
-'title' => 'Lista de Lecciones',
-'headerIcon' => 'icon-th-list',
-// when displaying a table, if we include bootstra-widget-table class
-// the table will be 0-padding to the box
-'htmlOptions' => array('class'=>'bootstrap-widget-table'),
 
-));*/
+echo $html_tema;
+	
 
 	$html='<table><tr><td colspan="8" style="text-align: center;">Lecciones</td></tr>';
 	foreach($contenidos as $fila){				  

@@ -30,8 +30,12 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Lista de Lecciones</h1>
 
+    <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4>¡Bienvenido a las lecciones del tema que has seleccionado!</h4>
+
+    </div>
 <!--<p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
 or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
@@ -50,11 +54,21 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id_lecciones',
+		//'id_lecciones',
 		//'id_temas',
 		'nb_lecciones',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
+			
+			'template' => '{view}', //detalle de los botones 
+'buttons'=>array(
+'view' => array(
+'label'=>'Ver',
+'url'=>"CHtml::normalizeUrl(array('/Lecciones_g/view', 'id'=>\$data->id_lecciones))",
+//'imageUrl'=>Yii::app()->request->baseUrl.'/images/update.png', //ruta de la imagen del boton que queremos agregar
+'options' => array('class'=>'vehiculo'),
+),
+),
 		),
 	),
 )); ?>

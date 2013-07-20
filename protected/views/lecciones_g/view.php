@@ -24,31 +24,31 @@ $this->breadcrumbs=array(
 	),
 )); */
 
-$html_contenido='<div class="bloque-contenedor">
+$html_leccion='<div class="bloque-contenedor">
 
 <div class="contenedor-interno">';
 
-$html_contenido.= '<b><div class="titulo-bloque">Lección Nº </b>'
+$html_leccion.= '<b><div class="titulo-bloque">Lección Nº </b>'
 .$model->id_lecciones.' </div><center> <div class="titulo-bloque2">'.$model->nb_lecciones.'</div></center>';
 
-$html_contenido.= '</div></div>';
+$html_leccion.= '</div></div>';
 
-echo $html_contenido;
+echo $html_leccion;
 
 $sql = "select * from contenidos where id_lecciones=".$model->id_lecciones;
-$leccion = Yii::app() -> db -> createCommand($sql) ->  query();
+$contenido = Yii::app() -> db -> createCommand($sql) ->  query();
 
-$html_leccion='<div class="bloque-contenedor">
+$html_contenido='<div class="bloque-contenedor">
                 <div class="titulo-bloque">Contenido</div>
                 <div class="contenedor-interno">';
 $i=0;
- foreach($leccion as $fila)  
+ foreach($contenido as $fila)  
     {  		//$html_establecimiento.= '<h3><b>Sede N°'.++$i.'</b></h3>';
-if($i > 0){ $html_leccion.='<br><br>';}
-		$html_leccion.= $fila['descrip_contenidos'].'<br>';
+if($i > 0){ $html_contenido.='<br><br>';}
+		$html_contenido.= $fila['descrip_contenidos'].'<br>';
 
 $i++ ;
 }
-$html_leccion.= '</div></div>';
-echo $html_leccion;
+$html_contenido.= '</div></div>';
+echo $html_contenido;
 ?>

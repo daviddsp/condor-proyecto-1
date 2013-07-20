@@ -20,7 +20,9 @@ $this->breadcrumbs=array(
 	'clientOptions'=>array(
 		'validateOnSubmit'=>true,
 	),
-)); ?>
+)); 
+
+?>
 
 	
 
@@ -39,23 +41,29 @@ $this->widget('bootstrap.widgets.TbAlert', array(
 		?>
 	<p class="note">Los campos que lleven <span class="required">*</span> son requeridos.</p>
 	<div class="contenedor-interno-login">
-		<?php echo $form->labelEx($model,'username'); ?>
+		<center><?php echo $form->labelEx($model,'username'); ?>
 		<?php echo $form->textField($model,'username'); ?>
 		<?php echo $form->error($model,'username'); ?>
 <!--############################################################-->
 		<?php echo $form->labelEx($model,'password'); ?>
 		<?php echo $form->passwordField($model,'password'); ?>
 		<?php echo $form->error($model,'password'); ?>
-
-		<br>
-		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe'); ?>
-		<?php echo $form->error($model,'rememberMe'); ?>
-	
-	
+			
+	<br>
 		<?php echo CHtml::submitButton('Ingresar'); ?>
+			
+		<?php echo $form->label($model,'rememberMe'); ?>
+		<?php echo $form->checkBox($model,'rememberMe'); ?>
+		<?php echo $form->error($model,'rememberMe'); ?>
+		</center>
+		
+	
 	</div>
 
 
-<?php $this->endWidget(); ?>
+<?php $this->endWidget();    ?>
+
+
 </div><!-- form -->
+
+
