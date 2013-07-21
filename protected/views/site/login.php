@@ -51,6 +51,14 @@ $this->widget('bootstrap.widgets.TbAlert', array(
 		<?php echo $form->error($model,'password'); ?>
 			
 	<br>
+
+		<?php $this->widget('bootstrap.widgets.TbButton', array(
+    'buttonType'=>'submit',
+    'type'=>'primary',
+    'label'=>'Guardar',
+    'loadingText'=>'loading...',
+    'htmlOptions'=>array('id'=>'buttonStateful'),
+)); ?>
 		<?php echo CHtml::submitButton('Ingresar'); ?>
 			
 		<?php echo $form->label($model,'rememberMe'); ?>
