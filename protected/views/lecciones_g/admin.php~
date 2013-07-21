@@ -62,13 +62,13 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 			
 			'template' => '{view}', //detalle de los botones 
 			'buttons'=>array(
-				'view' => array(
-					'label'=>'Ver',
-					'url'=>"CHtml::normalizeUrl(array('/Lecciones_g/view', 'id'=>\$data->id_lecciones))",
+			'view' => array(
+			'label'=>'Ver',
+			'url'=>"CHtml::normalizeUrl(array('/Lecciones_g/view', 'id'=>\$data->id_lecciones))",
 //'imageUrl'=>Yii::app()->request->baseUrl.'/images/update.png', //ruta de la imagen del boton que queremos agregar
-					'options' => array('class'=>'vehiculo'),
-				),
+			'options' => array('class'=>'vehiculo'),
 			),
 		),
 	),
+),
 )); ?>
