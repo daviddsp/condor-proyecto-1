@@ -45,6 +45,8 @@ class Usuario extends CActiveRecord
 		return array(
 			array('nombre, apellido, email, username, password, perfil', 'required'),
 			array('nombre, apellido', 'length', 'max'=>50),
+			array('username', 'unique'),
+			array('email', 'unique'),
 			array('email', 'length', 'max'=>100),
 			array('username, password', 'length', 'max'=>128),
 			array('perfil', 'length', 'max'=>10),
