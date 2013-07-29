@@ -12,7 +12,7 @@ $this->pageTitle=Yii::app()->name;
       array(
 		'image'=>'./images/condor-santo-cristo-merida-galeria.png',
 		'label'=>'Cóndor Web Tutorial de PostgreSQL.',
-		'caption'=>'Foto: Parque Sierra junto a un Cóndor.' . 
+		'caption'=>'Foto: Parque Sierra Nevada, junto a un Cóndor.' . 
 			   ' Simbolo de este Proyecto Socio-Tecnológico. '),
       array(
 		'image'=>'http://placehold.it/830x400&text=Second+thumbnail',

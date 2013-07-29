@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 );
 
 $this->widget('bootstrap.widgets.TbTabs', array(
-	'type' => 'pills',
+	'type' => 'tabs',
 	'tabs' => array(
 		array('label' => 'Temas', 
 		'items'=> array(

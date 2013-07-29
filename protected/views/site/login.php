@@ -3,9 +3,9 @@
 /* @var $model LoginForm */
 /* @var $form CActiveForm  */
 
-$this->pageTitle=Yii::app()->name . ' - Login';
-$this->breadcrumbs=array(
-	'Inicio de Sesión',
+$this->pageTitle = Yii::app()->name . ' - Login';
+$this->breadcrumbs = array(
+    'Inicio de Sesión',
 );
 ?>
 
@@ -14,63 +14,63 @@ $this->breadcrumbs=array(
 
 
 <div class="form">
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'login-form',
-	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-)); 
+    <?php
+    $form = $this->beginWidget('CActiveForm', array(
+        'id' => 'login-form',
+        'enableClientValidation' => true,
+        'clientOptions' => array(
+            'validateOnSubmit' => true,
+        ),
+    ));
+    ?>
 
-?>
 
-	
 
-		<?php
-		
-		Yii::app()->user->setFlash('success', '<strong>Por favor</strong> complete el siguiente formulario con sus datos de acceso:');
-$this->widget('bootstrap.widgets.TbAlert', array(
-    'block'=>true, // display a larger alert block?
-    'fade'=>true, // use transitions?
-    'closeText'=>'×', // close link text - if set to false, no close link is displayed
-    'alerts'=>array( // configurations per alert type
-	    'success'=>array('block'=>true, 'fade'=>true, 'closeText'=>'×'), // success, info, warning, error or danger
-    ),
+    <?php
+    Yii::app()->user->setFlash('success', '<strong>Por favor</strong> complete el siguiente formulario con sus datos de acceso:');
+    $this->widget('bootstrap.widgets.TbAlert', array(
+        'block' => true, // display a larger alert block?
+        'fade' => true, // use transitions?
+        'closeText' => '×', // close link text - if set to false, no close link is displayed
+        'alerts' => array(// configurations per alert type
+            'success' => array('block' => true, 'fade' => true, 'closeText' => '×'), // success, info, warning, error or danger
+        ),
+    ));
+    ?>
+    <p class="note">Los campos que lleven <span class="required">*</span> son requeridos.</p>
+    <div class="contenedor-interno-login">
+
+        <center><?php echo $form->labelEx($model, 'username'); ?>
+<?php echo $form->textField($model, 'username', array('data-placement' => "right", 'placement' => "right", 'rel' => "tooltip", 'title' => 'Por favor ingrese su usuario')); ?>
+            <?php echo $form->error($model, 'username'); ?>
+            <!--############################################################-->
+            <?php echo $form->labelEx($model, 'password'); ?>
+            <?php echo $form->passwordField($model, 'password', array('data-placement' => "right", 'placement' => "right", 'rel' => "tooltip", 'title' => 'Por favor ingrese su contraseña')); ?>
+            <?php echo $form->error($model, 'password'); ?>
+
+            <br>
+
+<?php
+$this->widget('bootstrap.widgets.TbButton', array(
+    'buttonType' => 'submit',
+    'type' => 'primary',
+    'label' => 'Guardar',
+    'loadingText' => 'loading...',
+    'htmlOptions' => array('id' => 'buttonStateful'),
 ));
-	
-		?>
-	<p class="note">Los campos que lleven <span class="required">*</span> son requeridos.</p>
-	<div class="contenedor-interno-login">
-		
-		<center><?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username', array('data-placement'=>"right",'placement'=>"right",'rel'=>"tooltip", 'title'=>'Por favor ingrese su usuario')); ?>
-		<?php echo $form->error($model,'username'); ?>
-<!--############################################################-->
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password', array('data-placement'=>"right",'placement'=>"right",'rel'=>"tooltip", 'title'=>'Por favor ingrese su contraseña')); ?>
-		<?php echo $form->error($model,'password'); ?>
-			
-	<br>
+?>
+            <?php echo CHtml::submitButton('Ingresar'); ?>
 
-		<?php $this->widget('bootstrap.widgets.TbButton', array(
-    'buttonType'=>'submit',
-    'type'=>'primary',
-    'label'=>'Guardar',
-    'loadingText'=>'loading...',
-    'htmlOptions'=>array('id'=>'buttonStateful'),
-)); ?>
-		<?php echo CHtml::submitButton('Ingresar'); ?>
-			
-		<?php echo $form->label($model,'rememberMe'); ?>
-		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->error($model,'rememberMe'); ?>
-		</center>
-		
-	
-	</div>
+            <?php echo $form->label($model, 'rememberMe'); ?>
+            <?php echo $form->checkBox($model, 'rememberMe'); ?>
+            <?php echo $form->error($model, 'rememberMe'); ?>
+        </center>
 
 
-<?php $this->endWidget();    ?>
+    </div>
+
+
+    <?php $this->endWidget(); ?>
 
 
 </div><!-- form -->

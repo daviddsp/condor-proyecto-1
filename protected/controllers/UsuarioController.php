@@ -74,7 +74,8 @@ class UsuarioController extends Controller
 			$model->password=md5($model->password);
 			
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id_usuario));
+                                $this->redirect(Yii::app()->homeUrl);
+				/*$this->redirect(array('view','id'=>$model->id_usuario));*/ /*linea por defecto OJO tener en cuenta*/
 		}
 
 		$this->render('create',array(
