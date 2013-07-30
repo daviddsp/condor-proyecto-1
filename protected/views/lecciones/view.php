@@ -13,7 +13,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Lecciones #<?php echo $model->id_lecciones; ?></h1>
+<h1>Ver Lecciones #<?php echo $model->id_lecciones; ?></h1>
 
 <?php $this->widget('bootstrap.widgets.TbDetailView',array(
 	'data'=>$model,

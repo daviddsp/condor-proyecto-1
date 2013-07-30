@@ -57,7 +57,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		//'id_lecciones',
 		//'id_temas',
 		'nb_lecciones',
-		array(
+		array(  'header'=>'Ver
+				 Contenido',
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 			
 			'template' => '{view}', //detalle de los botones 
